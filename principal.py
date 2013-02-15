@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*- 
-#Modulos
+#Módulos
 import urllib2
 from xml.dom.minidom import parse
 
@@ -15,6 +15,10 @@ if liga=="primera españa":
     liga=1
 elif liga=="segunda españa":
     liga=2
+elif liga=="premier league":
+    liga=10
+elif liga=="primera portugal":
+    liga=19
 
 url = urllib2.urlopen(""+raiz+"&req=tables&league=%s" % liga)
 
@@ -23,6 +27,10 @@ lista= url.read()
 lista=lista.replace("Real","R.")
 lista=lista.replace("Rayo ","R.")
 lista=lista.replace("Lugo","C.D Lugo")
+lista=lista.replace(" FC","")
+lista=lista.replace(" Clube","")
+lista=lista.replace(" Braga","B.")
+lista=lista.replace("Paços de ","P. ")
 equipos=open("equipos","w")
 equipos.write(lista)
 equipos.close()
@@ -42,13 +50,22 @@ for nodo_equipo in nodo_equipos.getElementsByTagName('table'):
     puntos.append(punto)
     ganados.append(ganado)
 
-#Mostrar en pantalla clasificacion
-if liga==1:
+#Mostrar en pantalla clasificación
+#Clasificación para ligas de 16 equipos
+if liga==19:
+    print "Pos.     Equipos       Puntos  Ganados"
+    print "--------------------------------------"
+    for i in range(16):
+            print "%s\t%s   \t %s   \t %s" % (i+1,equipos[i],puntos[i],ganados[i])
+
+#Clasificación para ligas de 20 equipos
+elif liga==1 or 10:
     print "Pos.     Equipos       Puntos  Ganados"
     print "--------------------------------------"
     for i in range(20):
             print "%s\t%s   \t %s   \t %s" % (i+1,equipos[i],puntos[i],ganados[i])
 
+#Clasificación para ligas de 22 equipos
 elif liga==2:
     print "Pos.     Equipos       Puntos  Ganados"
     print "--------------------------------------"
