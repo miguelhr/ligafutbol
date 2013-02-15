@@ -1,17 +1,24 @@
 # -*- coding: utf-8 -*- 
+#Modulos
 import urllib2
 from xml.dom.minidom import parse
 
+#objetos
 APIKEY = "3102fc908ca426bc06c8cb1c48dcedd4"
+raiz = "http://www.resultados-futbol.com/scripts/api/api.php?key="+APIKEY+"&format=xml"
 
+#peticiones al usuario
 liga =(raw_input("Que liga quieres ver: "))
+
+#Ligas
 if liga=="primera españa":
     liga=1
 elif liga=="segunda españa":
     liga=2
 
+url = urllib2.urlopen(""+raiz+"&req=tables&league=%s" % liga)
 
-url = urllib2.urlopen("http://www.resultados-futbol.com/scripts/api/api.php?key="+APIKEY+"&format=xml&req=tables&league=%s" % liga)
+#Reemplazos de palabras
 lista= url.read()
 lista=lista.replace("Real","R.")
 lista=lista.replace("Rayo ","R.")
@@ -20,8 +27,8 @@ equipos=open("equipos","w")
 equipos.write(lista)
 equipos.close()
 
+#Leyendo XML
 dom = parse('equipos')
-
 nodo_equipos = dom.firstChild
 
 equipos =[]
@@ -35,7 +42,7 @@ for nodo_equipo in nodo_equipos.getElementsByTagName('table'):
     puntos.append(punto)
     ganados.append(ganado)
 
-
+#Mostrar en pantalla clasificacion
 if liga==1:
     print "Pos.     Equipos       Puntos  Ganados"
     print "--------------------------------------"
