@@ -14,15 +14,26 @@ dom = parse('equipos')
 nodo_equipos = dom.firstChild
 
 equipos =[]
+puntos =[]
 for nodo_equipo in nodo_equipos.getElementsByTagName('table'):
     equipo= nodo_equipo.getElementsByTagName('team')[0].firstChild.data
+    punto= nodo_equipo.getElementsByTagName('points')[0].firstChild.data
     equipos.append(equipo)
+    puntos.append(punto)
 
 equipos2 =[]
 for i in equipos:
     sin_saltos = i.replace('\n','')
     equipos2.append(sin_saltos)
 
+puntos2 =[]
+for i in puntos:
+    sin_saltos = i.replace('\n','')
+    puntos2.append(sin_saltos)
+
+
+
 for i in range(20):
-    print equipos2[i]
+    print equipos2[i], puntos2[i]
+
 
