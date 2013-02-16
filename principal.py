@@ -8,7 +8,7 @@ APIKEY = "3102fc908ca426bc06c8cb1c48dcedd4"
 raiz = "http://www.resultados-futbol.com/scripts/api/api.php?key="+APIKEY+"&format=xml"
 
 #peticiones al usuario
-print "competiciones \nclasificacion"
+print "competiciones \nclasificacion\nresultados"
 opcion =(raw_input("Que opcion quieres: "))
 
 #Apartado clasificación
@@ -110,5 +110,57 @@ elif opcion=="competiciones":
     #Mostrar en pantalla competicones
     for i in competis:
         print i
+
+#Apartado resultados
+if opcion=="resultados":
+    liga =(raw_input("Que liga quieres ver: "))
+
+    #Ligas
+    if liga=="primera españa":
+        liga=1
+    elif liga=="segunda españa":
+        liga=2
+    elif liga=="premier league":
+        liga=10
+    elif liga=="primera portugal":
+        liga=19
+
+    url = urllib2.urlopen(""+raiz+"&req=matchs&league=%s" % liga)
+    lista= url.read()
+    lista=lista.replace("Real","R.")
+    result=open("result","w")
+    result.write(lista)
+    result.close()
+
+    #Leyendo XML
+    dom = parse('result')
+    nodo_result = dom.firstChild
+
+    locales =[]
+    visitantes =[]
+    gollocales =[]
+    golvisitantes =[]
+    for nodo_resul in nodo_result.getElementsByTagName('match'):
+        local= nodo_resul.getElementsByTagName('local')[0].firstChild.data.replace('\n','')
+        visitante= nodo_resul.getElementsByTagName('visitor')[0].firstChild.data.replace('\n','')
+        gollocal= nodo_resul.getElementsByTagName('local_goals')[0].firstChild.data.replace('\n','')
+        golvisitante= nodo_resul.getElementsByTagName('visitor_goals')[0].firstChild.data.replace('\n','')
+        locales.append(local)
+        visitantes.append(visitante)
+        gollocales.append(gollocal)
+        golvisitantes.append(golvisitante)
+
+    #resultado para ligas de 20 equipos
+    if liga==1 or 10:
+        print "Local                   visitante"
+        print "---------------------------------"
+        for i in range(10):
+            print "%s  \t%s-%s\t%s" % (locales[i],gollocales[i],golvisitantes[i],visitantes[i])
+
+
+
+
+
+
 
 
