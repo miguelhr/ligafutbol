@@ -13,6 +13,7 @@ opcion =(raw_input("Que opcion quieres: "))
 
 #Apartado clasificación
 if opcion=="clasificacion":
+    print "primera españa \nsegunda españa\npremier league\nprimera portugal" 
     liga =(raw_input("Que liga quieres ver: "))
     #Ligas
     if liga=="primera españa":
@@ -54,30 +55,19 @@ if opcion=="clasificacion":
         puntos.append(punto)
         ganados.append(ganado)
 
+    #Cuenta el número de equipos
+    Numeroequipos = len(equipos)
+
     #Mostrar en pantalla clasificación
-    #Clasificación para ligas de 16 equipos
-    if liga==19:
-        print "Pos.     Equipos       Puntos  Ganados"
-        print "--------------------------------------"
-        for i in range(16):
-                print "%s\t%s   \t %s   \t %s" % (i+1,equipos[i],puntos[i],ganados[i])
+    print "Pos.     Equipos       Puntos  Ganados"
+    print "--------------------------------------"
+    for i in range(Numeroequipos):
+        print "%s\t%s   \t %s   \t %s" % (i+1,equipos[i],puntos[i],ganados[i])
 
-    #Clasificación para ligas de 20 equipos
-    elif liga==1 or 10:
-        print "Pos.     Equipos       Puntos  Ganados"
-        print "--------------------------------------"
-        for i in range(20):
-                print "%s\t%s   \t %s   \t %s" % (i+1,equipos[i],puntos[i],ganados[i])
-
-    #Clasificación para ligas de 22 equipos
-    elif liga==2:
-        print "Pos.     Equipos       Puntos  Ganados"
-        print "--------------------------------------"
-        for i in range(22):
-                print "%s\t%s   \t %s   \t %s" % (i+1,equipos[i],puntos[i],ganados[i])
 
 #Apartado competiciones
 elif opcion=="competiciones":
+    print "españa \nfrancia\ninglaterra\nportugal"
     opcion =(raw_input("Localización de la liga: "))
 
     #Competiciones
@@ -113,6 +103,7 @@ elif opcion=="competiciones":
 
 #Apartado resultados
 if opcion=="resultados":
+    print "primera españa \nsegunda españa\npremier league\nprimera portugal"
     liga =(raw_input("Que liga quieres ver: "))
 
     #Ligas
@@ -128,6 +119,7 @@ if opcion=="resultados":
     url = urllib2.urlopen(""+raiz+"&req=matchs&league=%s" % liga)
     lista= url.read()
     lista=lista.replace("Real","R.")
+    lista=lista.replace("Paços de","P.")
     result=open("result","w")
     result.write(lista)
     result.close()
@@ -150,12 +142,14 @@ if opcion=="resultados":
         gollocales.append(gollocal)
         golvisitantes.append(golvisitante)
 
-    #resultado para ligas de 20 equipos
-    if liga==1 or 10:
-        print "Local                   visitante"
-        print "---------------------------------"
-        for i in range(10):
-            print "%s  \t%s-%s\t%s" % (locales[i],gollocales[i],golvisitantes[i],visitantes[i])
+    #Cuenta el número de equipos
+    Numeroequipos = len(locales)
+
+    #Muestra en pantalla resultados
+    print "Local                   visitante"
+    print "---------------------------------"
+    for i in range(Numeroequipos):
+        print "%s  \t%s-%s\t%s" % (locales[i],gollocales[i],golvisitantes[i],visitantes[i])
 
 
 
