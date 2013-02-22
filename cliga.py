@@ -10,18 +10,7 @@ raiz = "http://www.resultados-futbol.com/scripts/api/api.php?key="+APIKEY+"&form
 
 print "Content-Type: text/html\n"
 form = cgi.FieldStorage()
-name = form.getvalue("primera","NN")
-
-print 
-
-if name=="primera":
-    name=1
-if name=="segunda":
-    name=2
-elif name=="premier":
-    name=10
-elif name=="superliga":
-    name=19
+name = form.getvalue("clasi")
 
 url = urllib2.urlopen(""+raiz+"&req=tables&league=%s" % name)
 
@@ -63,7 +52,8 @@ for nodo_equipo in nodo_equipos.getElementsByTagName('table'):
 Numeroequipos = len(equipos)
 
     #Mostrar en pantalla clasificación
-print("<html><head><title>Clasificacion liga BBVA</title></head>")
+print("<html><head><title>Clasificacion</title></head>")
 print "<body><h5>Pos.     Equipos       Puntos  Ganados</h5>"
 for i in range(Numeroequipos):
     print "<p>%s  %s  %s  %s</p></body></html>" % (i+1,equipos[i],puntos[i],ganados[i])
+
