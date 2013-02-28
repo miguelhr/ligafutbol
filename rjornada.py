@@ -33,7 +33,7 @@ Numeroequipos = len(locales)
 print("<html><head><title>Resultados</title></head>")
 print "<body><h5>Local                   visitante</h5>"
 for i in range(Numeroequipos):
-    print "<p>%s  \t%s-%s\t%s</p></body></html>" % (locales[i].encode('utf-8'),gollocales[i],golvisitantes[i],visitantes[i].encode('utf-8'))
+    print "<p>%s  \t%s -%s\t%s</p></body></html>" % (locales[i].encode('utf-8'),gollocales[i],golvisitantes[i],visitantes[i].encode('utf-8'))
 
 
 
