@@ -28,6 +28,7 @@ golvisitantes = resp_xml.xpath("/matchs/match/visitor_goals/text()")
 fotolocal = resp_xml.xpath("/matchs/match/local_shield/text()")
 fotovisi = resp_xml.xpath("/matchs/match/visitor_shield/text()")
 fecha = resp_xml.xpath("/matchs/match/schedule/text()")
+canal = resp_xml.xpath("/matchs/match/channels/image/text()")
 
 #Cuenta el número de equipos
 Numeroequipos = len(locales)
@@ -37,7 +38,8 @@ print("<html><head><title>Resultados</title></head>")
 print "<body><table><tr><th></th><th>Local</th><th>Resultado</th><th>Visitante</th><th></th></tr>"
 for i in range(Numeroequipos):
     print "<tr><td><img src=%s alt=local/></td><td align=center>%s</td><td align=center>%s -%s</td><td align=center>%s</td><td><img src=%s alt=visitante/></td></tr>" % (fotolocal[i],locales[i].encode('utf-8'),gollocales[i],golvisitantes[i],visitantes[i].encode('utf-8'),fotovisi[i])
-    print "<table><tr><td align=center>%s</td></tr></table>" % fecha[i]
+    if len(canal)>0:    
+        print "<tr><td></td><td><img src=%s alt=canal/></td><td align=center>%s</td></tr>" % (canal[i],fecha[i])
 print "</table><p> <a href=../>Volver al indice</a></p></body></html>"
 
 
