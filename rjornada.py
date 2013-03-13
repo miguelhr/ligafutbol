@@ -34,12 +34,11 @@ canal = resp_xml.xpath("/matchs/match/channels/image/text()")
 Numeroequipos = len(locales)
 
 #Muestra en pantalla resultados
-print("<html><head><title>Resultados</title></head>")
+print("<html><head><title>Resultados De Jornada</title></head>")
 print "<body><table><tr><th></th><th>Local</th><th>Resultado</th><th>Visitante</th><th></th></tr>"
 for i in range(Numeroequipos):
     print "<tr><td><img src=%s alt=local/></td><td align=center>%s</td><td align=center>%s -%s</td><td align=center>%s</td><td><img src=%s alt=visitante/></td></tr>" % (fotolocal[i],locales[i].encode('utf-8'),gollocales[i],golvisitantes[i],visitantes[i].encode('utf-8'),fotovisi[i])
-    if len(canal)>0:    
-        print "<tr><td></td><td><img src=%s alt=canal/></td><td align=center>%s</td></tr>" % (canal[i],fecha[i])
+    print "<tr><td></td><td></td><td align=center>%s</td></tr>" % (fecha[i])
 print "</table><p> <a href=../>Volver al indice</a></p></body></html>"
 
 

@@ -35,8 +35,8 @@ Numeroequipos = len(equipos)
 
 #Mostrar en pantalla clasificación
 print("<html><head><title>Clasificacion</title></head>")
-print "<body><table><tr><th>Pos.</th><th>Equipos</th><th>P</th><th>J</th><th>G</th><th>E</th><th>P</th><th>GF</th><th>GC</th><th>GV</th><th>"
+print "<body><table><tr><th>Pos.</th><th>Equipos</th><th>P</th><th>J</th><th>G</th><th>E</th><th>P</th><th>GF</th><th>GC</th><th>GV</th></tr>"
 for i in range(Numeroequipos):
-    print "<tr><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td></tr>" % (i+1,equipos[i].encode('utf-8'),puntos[i],jugados[i],ganados[i],empatados[i],perdidos[i],gfavor[i],gcontra[i],gaverage[i])  
+    print "<tr><td align=center>%s</td><td>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td></tr>" % (i+1,equipos[i].encode('utf-8'),puntos[i],jugados[i],ganados[i],empatados[i],perdidos[i],gfavor[i],gcontra[i],gaverage[i])  
 print "</table><p> <a href=../>Volver al indice</a></p></body></html>"
 
