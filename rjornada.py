@@ -34,11 +34,40 @@ canal = resp_xml.xpath("/matchs/match/channels/image/text()")
 Numeroequipos = len(locales)
 
 #Muestra en pantalla resultados
-print("<html><head><title>Resultados De Jornada</title></head>")
-print "<body><table><tr><th></th><th>Local</th><th>Resultado</th><th>Visitante</th><th></th></tr>"
+page = etree.Element("html")
+doc=etree.ElementTree(page)
+headElt = etree.SubElement(page, "head")
+bodyElt = etree.SubElement(page, "body")
+title = etree.SubElement(headElt, "title")
+title.text = "Resultados De Jornada"
+tableElt = etree.SubElement(bodyElt, "table")
+trElt = etree.SubElement(tableElt, "tr")
+
+datos = ["","Local","Resultado","Visitante",""]
+for i in datos:
+    thElt = etree.SubElement(trElt, "th")
+    thElt.text = "%s" % i
+
 for i in range(Numeroequipos):
-    print "<tr><td><img src=%s alt=local/></td><td align=center>%s</td><td align=center>%s -%s</td><td align=center>%s</td><td><img src=%s alt=visitante/></td></tr>" % (fotolocal[i],locales[i].encode('utf-8'),gollocales[i],golvisitantes[i],visitantes[i].encode('utf-8'),fotovisi[i])
-    print "<tr><td></td><td></td><td align=center>%s</td></tr>" % (fecha[i])
-print "</table><p> <a href=../>Volver al indice</a></p></body></html>"
+    trElt2 = etree.SubElement(tableElt, "tr")
+    tdElt = etree.SubElement(trElt2, "td")
+    imgElt = etree.SubElement(tdElt, "img", src="%s" % (fotolocal[i]), alt="local")
+    tdElt2 = etree.SubElement(trElt2, "td", align="center")
+    tdElt2.text = "%s" % (locales[i])
+    tdElt3 = etree.SubElement(trElt2, "td", align="center")
+    tdElt3.text = "%s - %s" % (gollocales[i],golvisitantes[i])
+    tdElt5 = etree.SubElement(trElt2, "td", align="center")
+    tdElt5.text = "%s" % (visitantes[i])
+    tdElt6 = etree.SubElement(trElt2, "td", align="center")
+    imgElt2 = etree.SubElement(tdElt6, "img", src="%s" % (fotovisi[i]), alt="local")
+
+pElt = etree.SubElement(bodyElt, "p")
+aElt2 = etree.SubElement(pElt, "a", href="..")
+aElt2.text = "Volver al indice"
+
+print etree.tostring(page, pretty_print=True, xml_declaration=True, encoding='utf-8')
 
 
+
+
+#print "</table><p> <a href=../>Volver al indice</a></p></body></html>"

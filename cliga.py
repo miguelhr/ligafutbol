@@ -34,9 +34,48 @@ gaverage = resp_xml.xpath("/tables/table/avg/text()")
 Numeroequipos = len(equipos)
 
 #Mostrar en pantalla clasificación
-print("<html><head><title>Clasificacion</title></head>")
-print "<body><table><tr><th>Pos.</th><th>Equipos</th><th>P</th><th>J</th><th>G</th><th>E</th><th>P</th><th>GF</th><th>GC</th><th>GV</th></tr>"
+page = etree.Element("html")
+doc=etree.ElementTree(page)
+headElt = etree.SubElement(page, "head")
+bodyElt = etree.SubElement(page, "body")
+title = etree.SubElement(headElt, "title")
+title.text = "Clasificacion"
+tableElt = etree.SubElement(bodyElt, "table")
+trElt = etree.SubElement(tableElt, "tr")
+
+datos = ["Pos.","Equipos","P","J","G","E","P","GF","GC","GV"]
+for i in datos:
+    thElt = etree.SubElement(trElt, "th")
+    thElt.text = "%s" % i
+
 for i in range(Numeroequipos):
-    print "<tr><td align=center>%s</td><td>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td></tr>" % (i+1,equipos[i].encode('utf-8'),puntos[i],jugados[i],ganados[i],empatados[i],perdidos[i],gfavor[i],gcontra[i],gaverage[i])  
-print "</table><p> <a href=../>Volver al indice</a></p></body></html>"
+    trElt2 = etree.SubElement(tableElt, "tr")
+    tdElt = etree.SubElement(trElt2, "td")
+    tdElt.text = "%s" % (i+1)
+    tdElt2 = etree.SubElement(trElt2, "td")
+    tdElt2.text = "%s" % (equipos[i])
+    tdElt3 = etree.SubElement(trElt2, "td")
+    tdElt3.text = "%s" % (puntos[i])
+    tdElt4 = etree.SubElement(trElt2, "td")
+    tdElt4.text = "%s" % (jugados[i])
+    tdElt5 = etree.SubElement(trElt2, "td")
+    tdElt5.text = "%s" % (ganados[i])
+    tdElt6 = etree.SubElement(trElt2, "td")
+    tdElt6.text = "%s" % (empatados[i])
+    tdElt7 = etree.SubElement(trElt2, "td")
+    tdElt7.text = "%s" % (perdidos[i])
+    tdElt8 = etree.SubElement(trElt2, "td")
+    tdElt8.text = "%s" % (gfavor[i])
+    tdElt9 = etree.SubElement(trElt2, "td")
+    tdElt9.text = "%s" % (gcontra[i])
+    tdElt10 = etree.SubElement(trElt2, "td")
+    tdElt10.text = "%s" % (gaverage[i])
+
+pElt = etree.SubElement(bodyElt, "p")
+aElt2 = etree.SubElement(pElt, "a", href="..")
+aElt2.text = "Volver al indice"
+
+print etree.tostring(page, pretty_print=True, xml_declaration=True, encoding='utf-8')
+
+
 
