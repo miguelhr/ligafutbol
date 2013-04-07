@@ -21,5 +21,7 @@ en el navegador introducimos localhost y ya estara funcionando
 
 
 aptitude install libapache2-mod-python
+
 aptitude install python-lxml
+
 aptitude install python-requests

@@ -21,9 +21,11 @@ url= r.text
 resp_xml = etree.fromstring(url)
 
 compe = resp_xml.xpath("/leagues/league/name/text()")
+codigo = resp_xml.xpath("/leagues/league/id/text()")
 
 #Cuenta el número de equipos
 Numeroequipos = len(compe)
+Numerocompe = len(codigo)
 
 #Mostrar en pantalla clasificación
 page = etree.Element("html")
@@ -37,9 +39,13 @@ trElt = etree.SubElement(tableElt, "tr")
 thElt = etree.SubElement(trElt, "th")
 thElt.text = "Competiciones"
 for i in range(Numeroequipos):
-    trElt2 = etree.SubElement(tableElt, "tr")
-    tdElt = etree.SubElement(trElt2, "td")
-    tdElt.text = "%s" % (compe[i])
+    for i in range(Numerocompe):
+        trElt2 = etree.SubElement(tableElt, "tr")
+        tdElt = etree.SubElement(trElt2, "td")
+        pElt2 = etree.SubElement(tdElt, "p")
+        aElt3 = etree.SubElement(pElt2, "a", href="http://localhost/cgi-bin/cliga.py?clasi=%s"% codigo[i])
+        aElt3.text = "%s"% (compe[i])
+    break
 
 pElt = etree.SubElement(bodyElt, "p")
 aElt2 = etree.SubElement(pElt, "a", href="..")

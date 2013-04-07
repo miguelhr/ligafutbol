@@ -56,10 +56,22 @@ for i in range(Numeroequipos):
     tdElt2.text = "%s" % (locales[i])
     tdElt3 = etree.SubElement(trElt2, "td", align="center")
     tdElt3.text = "%s - %s" % (gollocales[i],golvisitantes[i])
+    tdElt4 = etree.SubElement(trElt2, "td", align="center")
+    tdElt4.text = "%s" % (visitantes[i])
     tdElt5 = etree.SubElement(trElt2, "td", align="center")
-    tdElt5.text = "%s" % (visitantes[i])
-    tdElt6 = etree.SubElement(trElt2, "td", align="center")
-    imgElt2 = etree.SubElement(tdElt6, "img", src="%s" % (fotovisi[i]), alt="local")
+    imgElt2 = etree.SubElement(tdElt5, "img", src="%s" % (fotovisi[i]), alt="local")
+
+    trElt3 = etree.SubElement(tableElt, "tr")
+    tdElt6 = etree.SubElement(trElt3, "td")
+    tdElt6.text = ""
+    tdElt7 = etree.SubElement(trElt3, "td")
+    tdElt7.text = ""
+    tdElt8 = etree.SubElement(trElt3, "td")
+    tdElt8.text = "%s" % (fecha[i])
+    tdElt9 = etree.SubElement(trElt3, "td")
+    tdElt9.text = ""
+    tdElt10 = etree.SubElement(trElt3, "td")
+    tdElt10.text = "" 
 
 pElt = etree.SubElement(bodyElt, "p")
 aElt2 = etree.SubElement(pElt, "a", href="..")
@@ -68,6 +80,3 @@ aElt2.text = "Volver al indice"
 print etree.tostring(page, pretty_print=True, xml_declaration=True, encoding='utf-8')
 
 
-
-
-#print "</table><p> <a href=../>Volver al indice</a></p></body></html>"
