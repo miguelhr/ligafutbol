@@ -2,7 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>Resultados de Liga</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/estilo2.css" />
     <script language="JavaScript">
     function cambiar()
     {
@@ -330,8 +332,12 @@
     </script>
     </head>
   <body>
+    <div id="logo">
+    </div>
+      <div id="navigation">
+      <h1>Resultados</h1>
     <form name="formulario" method="post" action="/cgi-bin/rjornada.py">
-    Seleccione la Competicion y la jornada deseada:<br />
+    <p>Seleccione la Competicion y la jornada deseada</p><br />
     <select name="liga" OnChange="cambiar()">
       <option value="1" selected>Liga BBVA</option>
       <option value="2">Liga Adelante</option>
@@ -389,5 +395,6 @@
     <input type='submit' value='Enviar'>
     </form>
     <p> <a href="index.html">Volver al indice</a></p>
+    </div>
   </body>
 </html>

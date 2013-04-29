@@ -1,0 +1,38 @@
+body {
+font-family: 'PT Sans', sans-serif;
+margin: 0 auto;
+padding-top: 5px;
+padding-left: 60px;
+}
+
+
+html {
+background: url(/css/fondo.jpg) no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+
+#logo {
+background: url("logo.jpg") no-repeat scroll 0;
+margin-top: 15px;
+padding-top: 60px;
+padding-bottom: 60px;
+}
+
+#navigation h1{
+padding-left: 230px;
+margin-top: -80px;
+color: #000000;
+font-size: 30pt;
+}
+
+#navigation form p{
+margin-top: 60px;
+margin-bottom: -10px;
+font-size: 14pt;
+}
+
+
+

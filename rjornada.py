@@ -19,7 +19,7 @@ r = requests.get('http://www.resultados-futbol.com/scripts/api/api.php?', params
 url= r.text
 
 #Leyendo XML
-resp_xml = etree.fromstring(url)
+resp_xml = etree.fromstring(url.encode('utf-8'))
 
 locales = resp_xml.xpath("/matchs/match/local/text()")
 visitantes = resp_xml.xpath("/matchs/match/visitor/text()")

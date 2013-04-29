@@ -18,7 +18,7 @@ r = requests.get('http://www.resultados-futbol.com/scripts/api/api.php?', params
 url= r.text
 
 #Leyendo XML
-resp_xml = etree.fromstring(url)
+resp_xml = etree.fromstring(url.encode('utf-8'))
 
 equipos = resp_xml.xpath("/tables/table/team/text()")
 puntos = resp_xml.xpath("/tables/table/points/text()")
@@ -30,10 +30,10 @@ gfavor = resp_xml.xpath("/tables/table/gf/text()")
 gcontra = resp_xml.xpath("/tables/table/ga/text()")
 gaverage = resp_xml.xpath("/tables/table/avg/text()")
 
-#Cuenta el número de equipos
+#Cuenta el numero de equipos
 Numeroequipos = len(equipos)
 
-#Mostrar en pantalla clasificación
+#Mostrar en pantalla clasificacion
 page = etree.Element("html")
 doc=etree.ElementTree(page)
 headElt = etree.SubElement(page, "head")

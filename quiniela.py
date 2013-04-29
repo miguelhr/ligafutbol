@@ -16,7 +16,7 @@ payload = {'round': '%s'%name, 'req': 'quiniela', 'format': 'xml', 'key': APIKEY
 r = requests.get('http://www.resultados-futbol.com/scripts/api/api.php?', params=payload)
 url= r.text
 #Leyendo XML
-resp_xml = etree.fromstring(url)
+resp_xml = etree.fromstring(url.encode('utf-8'))
 
 local = resp_xml.xpath("/quiniela/quiniela/lines/team1_name/text()")
 visitante = resp_xml.xpath("/quiniela/quiniela/lines/team2_name/text()")

@@ -1,27 +1,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>LigaFutbol</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/estilo2.css" />
   </head>
   <body>
-    <form action="/cgi-bin/cliga.py" method="post">
-      Clasificacion de la Liga:<br /> 
-        <select type='text' name="clasi">    
-          <option value="1" selected="selected">Liga BBVA</option>
-          <option value="2">Liga Adelante</option>
-          <option value="10">Premier League</option>
-          <option value="19">SuperLiga Portugal</option>
-          <option value="7">Serie A Italia</option>
-          <option value="89">Serie B Italia</option>
-          <option value="16">Ligue 1 Francia</option>
-          <option value="92">Ligue 2 Francia</option>
-          <option value="8">Bundesliga</option>
-          <option value="20">Liga Rumana</option>
-          <option value="9">Liga Holandesa</option>
-        </select>
-        <input type='submit' value='Enviar'>
-      </form>
-    <p> <a href="index.html">Volver al indice</a></p>
+    <div id="logo">
+    </div>
+      <div id="navigation">
+      <h1>Clasificación de la Liga</h1>
+      <form action="/cgi-bin/cliga.py" method="post">
+        <p>Seleccione la liga de la cual quiere conocer su clasificación</p><br /> 
+          <select type='text' name="clasi">    
+            <option value="1" selected="selected">Liga BBVA</option>
+            <option value="2">Liga Adelante</option>
+            <option value="10">Premier League</option>
+            <option value="19">SuperLiga Portugal</option>
+            <option value="7">Serie A Italia</option>
+            <option value="89">Serie B Italia</option>
+            <option value="16">Ligue 1 Francia</option>
+            <option value="92">Ligue 2 Francia</option>
+            <option value="8">Bundesliga</option>
+            <option value="20">Liga Rumana</option>
+            <option value="9">Liga Holandesa</option>
+          </select>
+          <input type='submit' value='Enviar'>
+        </form>
+      <p> <a href="index.html">Volver al indice</a></p>
+    </div>
   </body>
 </html> 
