@@ -11,9 +11,11 @@ Para poder utilizar esta api, tenemos que tener Apache2 instalado y los modulos 
 
 Los ubicacion de los archivos sera la siguiente:
 
--En /usr/lib/cgi-bin/ tendremos los archivos cliga.py , rjornada.py y quiniela.py
+-En /usr/lib/cgi-bin/ tendremos los archivos cliga.py , rjornada.py , compe.py, rss.py y quiniela.py
 
--En /var/www/ tendremos los archivos index.html , clasificacion.html , resultados.html y quiniela.html
+-En /var/www/ tendremos los archivos index.html , clasificacion.html , resultados.html , compe.html , noticias.html  y quiniela.html
+
+-En /var/www/css tendremos los archivos estilo.css , estilo2.css , estilorss.css , estilocomp.css , estiloresul.css , estilocla.css , estiloquino.css , logo.jpg y fondo.jpg
 
 Las carpetas con permisos 777
 
