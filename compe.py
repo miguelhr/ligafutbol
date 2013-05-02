@@ -12,6 +12,8 @@ print "Content-Type: text/html\n"
 form = cgi.FieldStorage()
 name = form.getvalue("compe")
 
+
+
 #Obtenemos XML
 payload = {'country': '%s'%name, 'req': 'leagues', 'format': 'xml', 'key': APIKEY}
 r = requests.get('http://www.resultados-futbol.com/scripts/api/api.php?', params=payload)
@@ -31,10 +33,21 @@ Numerocompe = len(codigo)
 page = etree.Element("html")
 doc=etree.ElementTree(page)
 headElt = etree.SubElement(page, "head")
-bodyElt = etree.SubElement(page, "body")
 title = etree.SubElement(headElt, "title")
 title.text = "Competiciones"
-tableElt = etree.SubElement(bodyElt, "table")
+
+link = etree.SubElement(headElt, "link",href='http://fonts.googleapis.com/css?family=PT+Sans', rel='stylesheet', type='text/css')
+#meta = etree.SubElement(headElt, "meta",http-equiv='Content-Type', content='text/html; charset=utf-8')
+link2 = etree.SubElement(headElt, "link",rel="stylesheet", type="text/css", href="http://localhost/css/estilocomp.css")
+
+bodyElt = etree.SubElement(page, "body")
+div = etree.SubElement(bodyElt, "div", id="container")
+div2 = etree.SubElement(div, "div", id="header")
+h1Elt = etree.SubElement(div2, "h1")
+h1Elt.text = "Competiciones"
+div3 = etree.SubElement(div, "div", id="content")
+
+tableElt = etree.SubElement(div3, "table")
 trElt = etree.SubElement(tableElt, "tr")
 thElt = etree.SubElement(trElt, "th")
 thElt.text = "Competiciones"

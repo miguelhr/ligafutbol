@@ -3,7 +3,6 @@ font-family: 'PT Sans', sans-serif;
 margin: 0 auto;
 padding-top: 20px;
 padding-left: 60px;
-
 }
 
 
@@ -16,10 +15,9 @@ background: url(/css/fondo.jpg) no-repeat center center fixed;
 }
 
 
-#Menu1 a:hover {
+#header ul li a:hover {
    background-color:#CCFF66;
    cursor: pointer;
-
 }
 
 
@@ -39,31 +37,26 @@ text-decoration:underline;
 }
 
 
-#navigation {
+#header {
 background: url("logo.jpg") no-repeat scroll 0;
-padding-top: 40px;
-padding-bottom: 40px;
-font-size: 17pt;
-
-
+margin-top: 10px;
+padding-top: 99px;
+padding-bottom: 20px;
 }
 
 
-#navigation ul{
+#header ul{
 padding-left: 250px;
 color: #000000;
-
+font-size: 17pt;
 }
 
-#Menu1 li a {
+
+
+#header ul li a {
 text-decoration: none;
 color:#000000;
-
 }
 
 
-html {
-border-top-color: #255E6E;
-border-top-style: solid;
-}
 

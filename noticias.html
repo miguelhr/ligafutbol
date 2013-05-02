@@ -7,22 +7,25 @@
     <link rel="stylesheet" type="text/css" href="/css/estilo2.css" />
   </head>
   <body>    
-    <div id="logo">
+    <div id="container">
+      <div id="header">
+        <h1>Noticias de Deporte</h1>
+      </div>
+      <div id="content">
+        <form action="/cgi-bin/rss.py" method="post">
+          <p>Elija el deporte del cual quiere conocer las noticias</p><br /> 
+          <select type='text' name="noti">    
+            <option value="Futbol" selected="selected">Fútbol</option>
+            <option value="Tenis">Tenis</option>
+            <option value="Golf">Golf</option>
+            <option value="Boxeo">Boxeo</option>
+            <option value="Rugby">Rugby</option>
+            <option value="Basquetbol">Baloncesto</option>
+          </select>
+          <input type='submit' value='Enviar'>
+        </form>
+        <p> <a href="index.html">Volver al indice</a></p>
+      </div>
     </div>
-      <div id="navigation">
-      <h1>Noticias de Deporte</h1>
-    <form action="/cgi-bin/rss.py" method="post">
-      <p>Elija el deporte del cual quiere conocer las noticias</p><br /> 
-        <select type='text' name="noti">    
-          <option value="Futbol" selected="selected">Fútbol</option>
-          <option value="Tenis">Tenis</option>
-          <option value="Golf">Golf</option>
-          <option value="Boxeo">Boxeo</option>
-          <option value="Rugby">Rugby</option>
-          <option value="Basquetbol">Baloncesto</option>
-        </select>
-        <input type='submit' value='Enviar'>
-      </form>
-    <p> <a href="index.html">Volver al indice</a></p>
   </body>
 </html> 

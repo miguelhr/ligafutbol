@@ -7,23 +7,25 @@
     <link rel="stylesheet" type="text/css" href="/css/estilo2.css" />
   </head>
   <body>
-    <div id="logo">
-    </div>
-      <div id="navigation">
-      <h1>Competiciones de Paises</h1>
-    <form action="/cgi-bin/compe.py" method="post">
-      <p>Elija el pais del cual quiere conocer las competiciones</p><br /> 
-        <select type='text' name="compe">    
-          <option value="es" selected="selected">España</option>
-          <option value="it">Italia</option>
-          <option value="pt">Portugal</option>
-          <option value="fr">Francia</option>
-          <option value="de">Alemania</option>
-          <option value="nl">Holanda</option>
-        </select>
-        <input type='submit' value='Enviar'>
-      </form>
-    <p> <a href="index.html">Volver al indice</a></p>
+    <div id="container">
+      <div id="header">
+        <h1>Competiciones de Paises</h1>
+      </div>
+      <div id="content">
+        <form action="/cgi-bin/compe.py" method="post">
+          <p>Elija el pais del cual quiere conocer las competiciones</p><br /> 
+          <select type='text' name="compe">    
+            <option value="es" selected="selected">España</option>
+            <option value="it">Italia</option>
+            <option value="pt">Portugal</option>
+            <option value="fr">Francia</option>
+            <option value="de">Alemania</option>
+            <option value="nl">Holanda</option>
+          </select>
+          <input type='submit' value='Enviar'>
+        </form>
+        <p> <a href="index.html">Volver al indice</a></p>
+      </div>
     </div>
   </body>
 </html> 

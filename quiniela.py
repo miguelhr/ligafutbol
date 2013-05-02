@@ -30,11 +30,20 @@ Numeroequipos = len(local)
 page = etree.Element("html")
 doc=etree.ElementTree(page)
 headElt = etree.SubElement(page, "head")
-bodyElt = etree.SubElement(page, "body")
 title = etree.SubElement(headElt, "title")
 title.text = "Resultados De Quiniela"
-h4Elt = etree.SubElement(bodyElt, "h4")
-h4Elt.text = "Resultados"
+
+link = etree.SubElement(headElt, "link",href='http://fonts.googleapis.com/css?family=PT+Sans', rel='stylesheet', type='text/css')
+#meta = etree.SubElement(headElt, "meta",http-equiv='Content-Type', content='text/html; charset=utf-8')
+link2 = etree.SubElement(headElt, "link",rel="stylesheet", type="text/css", href="http://localhost/css/estiloquini.css")
+
+bodyElt = etree.SubElement(page, "body")
+div = etree.SubElement(bodyElt, "div", id="container")
+div2 = etree.SubElement(div, "div", id="header")
+h1Elt = etree.SubElement(div2, "h1")
+h1Elt.text = "Resultados de la Quiniela Española"
+div3 = etree.SubElement(div, "div", id="content") 
+
 tableElt = etree.SubElement(bodyElt, "table")
 trElt = etree.SubElement(tableElt, "tr")
 
