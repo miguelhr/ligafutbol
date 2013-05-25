@@ -1,0 +1,273 @@
+body {
+  font-family: 'PT Sans', sans-serif;
+  margin: 0 auto;
+  padding-top: 5px;
+  padding-left: 60px;
+}
+
+html {
+  background: url(/css/fondo.jpg) no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+
+#header ul {
+  margin: 0;
+  list-style: none;
+  margin-top: -65px;
+  padding-left: 230px;
+  color: #000000;
+  font-size: 20pt;
+}
+
+#header ul li {
+  display: inline;
+  padding-left: 15px;
+  font-weight:600;
+  text-decoration:underline;
+}
+
+#header {
+  background: url("logo.jpg") no-repeat scroll 0;
+  margin-top: 25px;
+  padding-top: 129px;
+  padding-bottom: 20px;
+}
+
+#header ul li a:hover {
+  background-color:#CCFF66;
+  cursor: pointer;
+}
+
+#header ul li a {
+  text-decoration: none;
+  color:#000000;
+}
+
+#content h1{
+  color: #000000;
+  font-size: 25pt;
+  text-decoration:underline;
+  margin-left: 400px;
+  padding-bottom: 20px;
+}
+
+/*Tabla local*/
+#tablalocal{
+  width:auto;
+  height:auto;
+  float:left;
+}
+
+#tablalocal table {
+  width: 50px;
+
+  empty-cells: hide;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#tablalocal table td {
+  border: 1px solid #000;
+  font-size: 12pt;
+  width: 20px;
+}
+
+#tablalocal table th{
+  font-size: 12pt;
+  padding-left: 17px;
+  padding-right: 17px;
+  background:#008000;
+  border:black 1px solid;
+}
+
+#tablalocal table td:hover {
+  background: #008000;
+}
+
+/*Tabla tabladatos*/
+#tabladatos{
+  width:auto;
+  height:auto;
+  float:left;
+  padding-left: 100px;
+}
+
+#tabladatos table {
+  width: 50px;
+  height: 50px;
+  empty-cells: hide;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#tabladatos table td {
+  border: 1px solid #000;
+  font-size: 12pt;
+}
+
+#tabladatos table th{
+  font-size: 12pt;
+  padding-left: 17px;
+  padding-right: 17px;
+  background:#008000;
+  border:black 1px solid;
+}
+
+#tabladatos table td:hover {
+  background: #008000;
+}
+
+/*Tabla tablagol*/
+#tablagol{
+  width:auto;
+  height:auto;
+  float:left;
+  padding-left: 175px;
+}
+
+#tablagol table {
+  width: 50px;
+  empty-cells: hide;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#tablagol table td {
+  border: 1px solid #000;
+  font-size: 12pt;
+}
+
+#tablagol table th{
+  font-size: 12pt;
+  padding-left: 17px;
+  padding-right: 17px;
+  background:#008000;
+  border:black 1px solid;
+}
+
+#tablagol table td:hover {
+  background: #008000;
+}
+
+/*Tabla tablatarje*/
+#tablatarje{
+  width:auto;
+  height:auto;
+  float:left;
+  padding-left: 175px;
+}
+
+#tablatarje table {
+  width: 50px;
+  empty-cells: hide;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#tablatarje table td {
+  border: 1px solid #000;
+  font-size: 12pt;
+}
+
+#tablatarje table th{
+  font-size: 12pt;
+  padding-left: 17px;
+  padding-right: 17px;
+  background:#008000;
+  border:black 1px solid;
+}
+
+#tablatarje table td:hover {
+  background: #008000;
+}
+
+/*Tabla tablavisi*/
+#tablavisi{
+  width:auto;
+  height:auto;
+  float:right;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+#tablavisi table {
+  width: 50px;
+  empty-cells: hide;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#tablavisi table td {
+  border: 1px solid #000;
+  font-size: 12pt;
+  width: 20px;
+}
+
+#tablavisi table th{
+  font-size: 12pt;
+  padding-left: 17px;
+  padding-right: 17px;
+  background:#008000;
+  border:black 1px solid;
+}
+
+#tablavisi table td:hover {
+  background: #008000;
+}
+
+/*En comun en todas las tablas*/
+table tr:nth-child(even) td {
+  background-color: #99FF33;
+}
+
+table tr:nth-child(odd) td {
+  background-color: #80ff00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pie{
+height: 40px;
+background-color: #333;
+color: #fff;
+text-align: center;
+clear: both;
+margin-left: -60px;
+}
+
+#pie p{
+padding-top: 10px;
+}
+
+

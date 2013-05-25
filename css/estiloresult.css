@@ -1,7 +1,7 @@
 body {
   font-family: 'PT Sans', sans-serif;
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 5px;
   padding-left: 60px;
 }
 
@@ -11,11 +11,6 @@ html {
    -moz-background-size: cover;
    -o-background-size: cover;
    background-size: cover;
-}
-
-#header ul li a:hover {
-  background-color:#CCFF66;
-  cursor: pointer;
 }
 
 #header ul {
@@ -36,15 +31,59 @@ html {
 
 #header {
   background: url("logo.jpg") no-repeat scroll 0;
-  margin-top: 10px;
+  margin-top: 25px;
   padding-top: 129px;
   padding-bottom: 20px;
-  margin-bottom: 579px;
+}
+
+#header ul li a:hover {
+   background-color:#CCFF66;
+   cursor: pointer;
 }
 
 #header ul li a {
   text-decoration: none;
   color:#000000;
+}
+
+#content h1{
+  color: #000000;
+  font-size: 25pt;
+  text-decoration:underline;
+  margin-left: 600px;
+}
+
+#content table {
+  width: 250px;
+  empty-cells: hide;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#content table td {
+  border: 1px solid #000;
+  font-size: 14pt;
+}
+
+#content table th{
+  font-size: 20pt;
+  padding-left: 27px;
+  padding-right: 27px;
+  background:#008000;
+  border:black 1px solid;
+}
+
+#content table td:hover {
+  background: #008000;
+}
+
+table tr:nth-child(even) td {
+  background-color: #99FF33;
+}
+
+table tr:nth-child(odd) td {
+  background-color: #80ff00;
 }
 
 #pie{

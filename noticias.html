@@ -9,10 +9,17 @@
   <body>    
     <div id="container">
       <div id="header">
-        <h1>Noticias de Deporte</h1>
+        <ul>
+          <li><a href="clasificacion.html">Clasificaciones de Ligas</a></li>
+          <li><a href="resultados.html">Resultados de Ligas</a></li>
+          <li><a href="quiniela.html">Quiniela Liga Española</a></li>
+          <li><a href="compe.html">Competiciones</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+        </ul>
       </div>
       <div id="content">
         <form action="/cgi-bin/rss.py" method="post">
+          <h1>Noticias de Deporte</h1>
           <p>Elija el deporte del cual quiere conocer las noticias</p><br /> 
           <select type='text' name="noti">    
             <option value="Futbol" selected="selected">Fútbol</option>
@@ -25,6 +32,9 @@
           <input type='submit' value='Enviar'>
         </form>
         <p> <a href="index.html">Volver al indice</a></p>
+      </div>
+      <div id="pie">
+        <p>Copyright 2013 miguelhr - API de www.resuldos-futbol.com</p>
       </div>
     </div>
   </body>

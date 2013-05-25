@@ -12,8 +12,6 @@ print "Content-Type: text/html\n"
 form = cgi.FieldStorage()
 name = form.getvalue("compe")
 
-
-
 #Obtenemos XML
 payload = {'country': '%s'%name, 'req': 'leagues', 'format': 'xml', 'key': APIKEY}
 r = requests.get('http://www.resultados-futbol.com/scripts/api/api.php?', params=payload)
@@ -25,11 +23,12 @@ resp_xml = etree.fromstring(url.encode('utf-8'))
 compe = resp_xml.xpath("/leagues/league/name/text()")
 codigo = resp_xml.xpath("/leagues/league/id/text()")
 
-#Cuenta el número de equipos
+#Contadores
 Numeroequipos = len(compe)
 Numerocompe = len(codigo)
 
 #Mostrar en pantalla clasificación
+#Cabecera
 page = etree.Element("html")
 doc=etree.ElementTree(page)
 headElt = etree.SubElement(page, "head")
@@ -37,33 +36,44 @@ title = etree.SubElement(headElt, "title")
 title.text = "Competiciones"
 
 link = etree.SubElement(headElt, "link",href='http://fonts.googleapis.com/css?family=PT+Sans', rel='stylesheet', type='text/css')
-#meta = etree.SubElement(headElt, "meta",http-equiv='Content-Type', content='text/html; charset=utf-8')
 link2 = etree.SubElement(headElt, "link",rel="stylesheet", type="text/css", href="http://localhost/css/estilocomp.css")
 
 bodyElt = etree.SubElement(page, "body")
 div = etree.SubElement(bodyElt, "div", id="container")
 div2 = etree.SubElement(div, "div", id="header")
-h1Elt = etree.SubElement(div2, "h1")
-h1Elt.text = "Competiciones"
-div3 = etree.SubElement(div, "div", id="content")
+ulElt1 = etree.SubElement(div2, "ul")
+liElt1 = etree.SubElement(ulElt1, "li")
+aElt1 = etree.SubElement(liElt1, "a", href="http://localhost/clasificacion.html")
+aElt1.text = "Clasificaciones de Ligas"
+liElt2 = etree.SubElement(ulElt1, "li")
+aElt2 = etree.SubElement(liElt2, "a", href="http://localhost/resultados.html")
+aElt2.text = "Resultados de Ligas"
+liElt3 = etree.SubElement(ulElt1, "li")
+aElt3 = etree.SubElement(liElt3, "a", href="http://localhost/quiniela.html")
+aElt3.text = "Quiniela Liga Espanola"
+liElt4 = etree.SubElement(ulElt1, "li")
+aElt4 = etree.SubElement(liElt4, "a", href="http://localhost/compe.html")
+aElt4.text = "Competiciones"
+liElt5 = etree.SubElement(ulElt1, "li")
+aElt5 = etree.SubElement(liElt5, "a", href="http://localhost/noticias.html")
+aElt5.text = "Noticias"
 
-tableElt = etree.SubElement(div3, "table")
-trElt = etree.SubElement(tableElt, "tr")
-thElt = etree.SubElement(trElt, "th")
-thElt.text = "Competiciones"
+#contenido
+div3 = etree.SubElement(div, "div", id="content")
+h1Elt = etree.SubElement(div3, "h1")
+h1Elt.text = "Competiciones"
+ulElt = etree.SubElement(div3, "ul")
 for i in range(Numeroequipos):
     for i in range(Numerocompe):
-        trElt2 = etree.SubElement(tableElt, "tr")
-        tdElt = etree.SubElement(trElt2, "td")
-        pElt2 = etree.SubElement(tdElt, "p")
-        aElt3 = etree.SubElement(pElt2, "a", href="http://localhost/cgi-bin/cliga.py?clasi=%s"% codigo[i])
+        liElt2 = etree.SubElement(ulElt, "li")
+        aElt3 = etree.SubElement(liElt2, "a", href="http://localhost/cgi-bin/cliga.py?clasi=%s"% codigo[i])
         aElt3.text = "%s"% (compe[i])
     break
 
-pElt = etree.SubElement(bodyElt, "p")
-aElt2 = etree.SubElement(pElt, "a", href="..")
-aElt2.text = "Volver al indice"
+#pie de pagina
+div4 = etree.SubElement(div, "div", id="pie")
+pElt = etree.SubElement(div4, "p")
+pElt.text = "Copyright 2013 miguelhr - API de www.resuldos-futbol.com"
 
 print etree.tostring(page, pretty_print=True, xml_declaration=True, encoding='utf-8')
-
 

@@ -1,9 +1,10 @@
 body {
   font-family: 'PT Sans', sans-serif;
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 5px;
   padding-left: 60px;
 }
+
 
 html {
   background: url(/css/fondo.jpg) no-repeat center center fixed;
@@ -13,38 +14,32 @@ html {
    background-size: cover;
 }
 
-#header ul li a:hover {
-  background-color:#CCFF66;
-  cursor: pointer;
-}
 
-#header ul {
-  margin: 0;
-  list-style: none;
-  margin-top: -65px;
-  padding-left: 230px;
+#header h1{
   color: #000000;
-  font-size: 20pt;
-}
-
-#header ul li {
-  display: inline;
-  padding-left: 15px;
-  font-weight:600;
+  font-size: 25pt;
   text-decoration:underline;
+  margin-left: 550px;
+  margin-top:40px;
 }
 
-#header {
-  background: url("logo.jpg") no-repeat scroll 0;
-  margin-top: 10px;
-  padding-top: 129px;
-  padding-bottom: 20px;
-  margin-bottom: 579px;
+#content {
+  background: url("error.jpg") no-repeat scroll 0;
+  margin-top: 50px;
+  margin-left: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 400px;
 }
 
-#header ul li a {
-  text-decoration: none;
-  color:#000000;
+#content p{
+  color: #000000;
+  font-size: 18pt;
+  margin-left: 550px;
+  margin-right: 95px;
+  margin-top:40px;
+  background-color:#CCFF99;
+  padding-left:5px;
 }
 
 #pie{
@@ -59,5 +54,12 @@ html {
 #pie p{
   padding-top: 10px;
 }
+
+
+
+
+
+
+
 
 

@@ -1,35 +1,90 @@
 body {
-font-family: 'PT Sans', sans-serif;
-margin: 0 auto;
-padding-top: 5px;
-padding-left: 60px;
+  font-family: 'PT Sans', sans-serif;
+  margin: 0 auto;
+  padding-top: 5px;
+  padding-left: 60px;
 }
 
-
 html {
-background: url(/css/fondo.jpg) no-repeat center center fixed;
+  background: url(/css/fondo.jpg) no-repeat center center fixed;
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
    background-size: cover;
 }
 
+#header ul {
+  margin: 0;
+  list-style: none;
+  margin-top: -65px;
+  padding-left: 230px;
+  color: #000000;
+  font-size: 20pt;
+}
+
+#header ul li {
+  display: inline;
+  padding-left: 15px;
+  font-weight:600;
+  text-decoration:underline;
+}
 
 #header {
-background: url("logo.jpg") no-repeat scroll 0;
-margin-top: 25px;
-padding-top: 25px;
-padding-bottom: 20px;
+  background: url("logo.jpg") no-repeat scroll 0;
+  margin-top: 25px;
+  padding-top: 129px;
+  padding-bottom: 20px;
 }
 
-
-#header h1{
-padding-left: 230px;
-color: #000000;
-font-size: 30pt;
+#header ul li a:hover {
+  background-color:#CCFF66;
+  cursor: pointer;
 }
 
+#header ul li a {
+  text-decoration: none;
+  color:#000000;
+}
 
+#content h1{
+  color: #000000;
+  font-size: 25pt;
+  text-decoration:underline;
+}
 
+#content h4{
+  font-size: 20pt;
+  text-decoration:underline;
+  margin-bottom:-20px;
+}
 
+#content p{
+
+  font-size: 14pt;
+}
+
+#fondo {
+  background-color:#CCFF99;
+  margin-right:60px;
+  padding-left:8px;
+  padding-right:8px;
+}
+
+#contenido {
+  padding-bottom:20px;
+  background-color:#E5FFCC;
+}
+
+#pie{
+  height: 40px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  clear: both;
+  margin-left: -60px;
+}
+
+#pie p{
+  padding-top: 10px;
+}
 

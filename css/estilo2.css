@@ -1,37 +1,86 @@
 body {
-font-family: 'PT Sans', sans-serif;
-margin: 0 auto;
-padding-top: 5px;
-padding-left: 60px;
+  font-family: 'PT Sans', sans-serif;
+  margin: 0 auto;
+  padding-top: 5px;
+  padding-left: 60px;
 }
 
-
 html {
-background: url(/css/fondo.jpg) no-repeat center center fixed;
+  background: url(/css/fondo.jpg) no-repeat center center fixed;
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
    background-size: cover;
 }
 
-#header {
-background: url("logo.jpg") no-repeat scroll 0;
-margin-top: 25px;
-padding-top: 25px;
-padding-bottom: 20px;
+#header ul {
+  margin: 0;
+  list-style: none;
+  margin-top: -65px;
+  padding-left: 230px;
+  color: #000000;
+  font-size: 20pt;
 }
 
-#header h1{
-padding-left: 230px;
-color: #000000;
-font-size: 30pt;
+#header ul li {
+  display: inline;
+  padding-left: 15px;
+  font-weight:600;
+  text-decoration:underline;
+}
+
+#header {
+  background: url("logo.jpg") no-repeat scroll 0;
+  margin-top: 25px;
+  padding-top: 129px;
+  padding-bottom: 20px;
+}
+
+#header ul li a {
+  text-decoration: none;
+  color:#000000;
+}
+
+#content h1{
+  color: #000000;
+  font-size: 25pt;
+  text-decoration:underline;
 }
 
 #content form p{
-margin-top: 50px;
-margin-bottom: -10px;
-font-size: 14pt;
+  margin-top: 30px;
+  margin-bottom: -10px;
+  font-size: 15pt;
 }
 
+#header ul li a:hover {
+  background-color:#CCFF66;
+  cursor: pointer;
+}
 
+#content p a{
+  color: #000000;
+}
+
+#content p a:hover {
+  background-color:#CCFF66;
+  cursor: pointer;
+}
+
+#content {
+  margin-bottom: 388px;
+}
+
+#pie{
+  height: 40px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  clear: both;
+  margin-left: -60px;
+}
+
+#pie p{
+  padding-top: 10px;
+}
 

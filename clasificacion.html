@@ -9,10 +9,17 @@
   <body>
     <div id="container">
       <div id="header">
-        <h1>Clasificación de la Liga</h1>
+        <ul>
+          <li><a href="clasificacion.html">Clasificaciones de Ligas</a></li>
+          <li><a href="resultados.html">Resultados de Ligas</a></li>
+          <li><a href="quiniela.html">Quiniela Liga Española</a></li>
+          <li><a href="compe.html">Competiciones</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+        </ul>
       </div>
       <div id="content">
         <form action="/cgi-bin/cliga.py" method="post">
+          <h1>Clasificación de la Liga</h1>
           <p>Seleccione la liga de la cual quiere conocer su clasificación</p><br /> 
           <select type='text' name="clasi">    
             <option value="1" selected="selected">Liga BBVA</option>
@@ -29,7 +36,10 @@
           </select>
           <input type='submit' value='Enviar'>
         </form>
-      <p> <a href="index.html">Volver al indice</a></p>
+        <p> <a href="index.html">Volver al indice</a></p>
+      </div>
+      <div id="pie">
+        <p>Copyright 2013 miguelhr - API de www.resuldos-futbol.com</p>
       </div>
     </div>
   </body>
